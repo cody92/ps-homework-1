@@ -1,6 +1,3 @@
-ps-homework-1
-=============
-
 
 Tema 1 (Operarea cu fişiere, evaluarea dimensiunii acestora)
 ------------------------------------------------------------
