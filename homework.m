@@ -13,7 +13,7 @@ switch result
 	case 1
 		homework1();
 	case 2
-		disp('To be implemented!');
+		homework2();
 	case 3
 		disp('To be implemented!');
 	otherwise
