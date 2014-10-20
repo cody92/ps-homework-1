@@ -1,4 +1,4 @@
-function [byteNumber bitNumber] = getFileByteNumber( fileName )
+function [byteNumber bitNumber] = getFileByteNumber(fileName)
 
 
 	fileID = fopen(fileName);

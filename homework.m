@@ -15,7 +15,7 @@ switch result
 	case 2
 		homework2();
 	case 3
-		disp('To be implemented!');
+		homework3();
 	otherwise
 		disp('Invalid!');
 end
