@@ -1,12 +1,7 @@
-function [byteNumber bitNumber] = getFileByteNumber(fileName)
-
+function [size] = getFileByteNumber(fileName, mode)
 
 	fileID = fopen(fileName);
-
-	fileInfo = dir(fileName);
-	byteNumber = fileInfo.bytes;
-
-	[file bitNumber] = fread(fileID,inf,'bit1');
+	[file, size] = fread(fileID, inf, mode);
 	fclose(fileID);
 end
 

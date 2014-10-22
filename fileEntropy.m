@@ -1,5 +1,5 @@
 function [entropy, redundancy] = fileEntropy(fileName, mode)
-	fileSize = getFileByteNumber(fileName);
+	fileSize = getFileByteNumber(fileName, mode);
 
 	if(strcmp(mode,'uint8'))
 		simbolsLength = 0:255;
@@ -9,11 +9,16 @@ function [entropy, redundancy] = fileEntropy(fileName, mode)
 		numberOfBits = 16;
 	end
 			
-	fileContent8 = readFile(fileName, mode);
-	numberOfAppearances = hist(fileContent8, simbolsLength);
+	fileContent = readFile(fileName, mode);
+	numberOfAppearances = hist(fileContent, simbolsLength);
 	probability = numberOfAppearances/fileSize;
-	entropy = -log2(probability);
-	entropy(entropy == -inf) = 0;
+	for i=1:length(probability)
+		if probability(i) == 0 
+			entropy(i) = 0;
+		else
+			entropy(i) = - log2(probability(i));
+		end
+	end
 	redundancy = sum(numberOfBits - entropy);
 end
 
