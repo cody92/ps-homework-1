@@ -1,7 +1,7 @@
 function homework3()
 files = getSampleFiles();
 	for i=1:length(files)
-		figure(i);
+		figure('Name', horzcat('Entropia fisierului: ', files{i}));
 		[entropy8 redundancy8] = fileEntropy(files{i}, 'uint8');
 		[entropy16 redundancy16] = fileEntropy(files{i}, 'uint16');
 		subplot(2,1,1)

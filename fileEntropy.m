@@ -11,6 +11,7 @@ function [entropy, redundancy] = fileEntropy(fileName, mode)
 			
 	fileContent = readFile(fileName, mode);
 	numberOfAppearances = hist(fileContent, simbolsLength);
+	max(numberOfAppearances)
 	probability = numberOfAppearances/fileSize;
 	for i=1:length(probability)
 		if probability(i) == 0 
